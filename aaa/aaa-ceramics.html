@@ -1,0 +1,504 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+<title>Aisa Art Antique - Ceramics </title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://kit.fontawesome.com/0ceb15e3b7.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta charset="UTF-8">
+
+<style>
+
+/* for test only 
+* {
+  border: 1px solid blue;
+}
+*/
+
+/*define variable arcoss html */
+:root {
+ --txtcolor: orange;
+ --backgc: #3a7ca5;
+ --txtfont: 'Brush Script MT', cursive;; 
+}
+
+body{
+  width: 100%;
+  height: 1100px;
+  background: var(--backgc);
+  /*overflow-x: hidden;*/
+}
+
+/*
+body:before { 
+  content: ""; 
+  position: absolute;
+  width: 100%;
+  height: 2000px;
+  background-image: url('jrbg-1.png'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  opacity: 0.1;
+  overflow: hidden; 
+}
+*/
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*header */
+#logi {
+  float: left;
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+}
+
+#inamecn {
+  font-family: KaiTi;
+  float: left;
+  font-size: 15px;
+  color: var(--txtcolor);
+  padding-left: 10px;
+  padding-top: 1%;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.tt {
+  float: left;
+  font-family: var(--txtfont);
+  font-size: 60px;
+  color: orange;
+  padding-left: 350px;
+  /*padding-top: 1%;*/
+  
+}
+
+.topmenu {
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  color: lightgrey;
+  font-weight: bold;
+}
+
+.topmenu a{
+  padding: 10px;
+  color: var(--txtcolor);;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sepaline{
+  width: 100%;
+  height: 5px;
+  background-color: lightgrey;
+}
+
+/* Create two columns/boxes that floats next to each other */
+section  {
+  position: relative;
+  width: 100%;
+  height: 870px;
+  overflow: hidden;  
+  background: transparent;
+}
+
+/* left part for main menu */
+.mnav {
+  float: left;
+  width: 15%;
+  height: 800px; /* only for demonstration, should be removed */
+  background: transparent; 
+  padding-left: 0px;
+}
+
+.mnav ul {
+  margin-top: 0px;
+}
+
+/* Style the list inside the menu */
+.mnav ul li  {
+  list-style-type: none;
+  padding-left: 0px;
+  padding-top: 35px;
+  color: var(--txtcolor);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid white; 
+}
+
+.mnav ul li a {
+  font-size: 20px;
+  color: var(--txtcolor);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mnav ul li:nth-child(2)  {
+  background-color: lightblue;
+}
+
+.mnav ul li:hover {
+  transform: scale(1.07);
+}
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*right part for auto display */
+section .grid-container {
+  float: left; 
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  text-align: center;
+  background-color: transparent;
+  padding: 10px;
+  width: 85%;
+  height: 850px; /* only for demonstration, should be removed */ 
+}
+
+.grid-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  back-ground: transparent;
+  padding: 20px; 
+  border: 0;
+  border: 1px solid lightblue /*var(--txtcolor)*/;
+  /*z-index: 2;*/
+}
+
+.grid-item img {
+   width: 225px;
+   height: 250px;
+   text-align: center;
+}
+
+.grid-item figcaption{
+  width: 200px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.grid-item .price {
+  color: brown;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.grid-item:hover {
+  opacity: 0.5;
+}
+
+/* Style the footer */
+footer {
+  position: relative;
+  background: burlywood; 
+  width: 1600px;
+  height: 200px;
+  text-align: center;
+  color: var(--txtcolor);;
+  border: 2px solid var(--txtcolor);;
+}
+
+footer .des{
+  float: left;
+  color: black;
+  font-size: 24px;
+}
+
+footer .mis {
+  position: relative;
+  top: 20px;
+  left: 40px;
+  padding-right: 100px;
+
+}
+
+footer .mis .paym {
+  float: right;
+  font-size: 30px;
+  opacity: 1;
+}
+
+.fa-cc-visa {
+  color: Brown;
+}
+
+.fa-cc-mastercard {
+  color:  SteelBlue;
+}
+
+.fa-cc-discover {
+  color: DarkSalmon;
+}
+
+.fa-cc-amex {
+  color:  CornflowerBlue;
+}
+
+.fa-paypal {
+  color:  DarkSeaGreen;
+}
+
+.paym i:hover {
+  transform: scale(1.4);
+}
+
+footer .mis .email a{
+  float: left;
+  color: var(--backgc);
+  font-size: 30px;
+  font-family: var(--txtfont);
+}
+
+/* for all a tag customize */
+A {
+  Font-Family: Montserrat;
+  Position: Relative;
+  Text-Decoration: None;
+}
+
+A:after {
+  Content: '';
+  Position: Absolute;
+  Width: 0;
+  Height: 2px;
+  Display: Block;
+  Margin-Top: 0px;
+  Left: 0%;
+  Background: Black;
+  Transition: Width .3s Ease;
+}
+
+A:hover:after{
+  Width: 100%;
+  Left: 0%;
+  Background: Black;
+
+}
+
+/* double circle cursor  begin*/
+/*we have customized cursor */
+* {
+  Cursor: None;
+  Box-Sizing: Border-Box;
+}
+
+.cursor {
+  Width: 50px;
+  Height: 50px;
+  Border-Radius: 100%;
+  Border: 1px Solid tomato;
+  Transition: All 200ms Ease-Out;
+  Position: Fixed;
+  Pointer-Events: None;
+  Left: 0;
+  Top: 0;
+  Transform: Translate(Calc(-50% + 15px), -50%);
+}
+
+.cursor2 {
+  Width: 20px;
+  Height: 20px;
+  /*Border-Radius: 100%; */ /* outside circle; inner square*/
+  Background-Color: tomato;
+  Opacity: .7;
+  Position: Fixed;
+  Transform: Translate(-50%, -50%);
+  Pointer-Events: None;
+  Transition: Width .3s, Height .3s, Opacity .3s;
+}
+
+.hover {
+  Background-Color: lightgreen;
+  Opacity: 0.1;
+}
+
+.cursorinnerhover {
+  Width: 50px;
+  Height: 50px;
+  Opacity: .5;
+}
+/* double circle cursor  end*/
+
+</style>
+
+</head>
+
+<body>
+
+<!-- header -->
+<header class="topp">
+<div  class="clearfix">
+<img  id="logi" class="clearfix" src="logo/universe.png" alt="image not found"> 
+<span id="inamecn">荣甄堂</span>
+<span class="tt">Asian Art Antique - Ceramics</span>
+</div>
+
+<div>
+<nav class="topmenu">
+  <a href="/html/"><i class='fas fa-search' style='font-size:20px;color:var(--txtcolor);'></i></a> |
+  <a href="/css/">HOME</a> |
+  <a href="/css/">WISHLIST</a> |
+  <a href="/css/">ACCOUNT</a> |
+  <a href="/js/"><i class="fa fa-shopping-cart" style="font-size:20px;color:var(--txtcolor);"></i></a> 
+</nav>
+</div>
+</header>
+ 
+<hr class="sepaline">
+
+<!-- middle body -->
+<section>
+  
+  <!-- for left main menu -->
+  <nav class="mnav">
+    <ul>
+      <li><a href="aaa-p1.html">Home</a></li>  
+      <li><a href="aaa-ceramics.html">Ceramics</a></li>
+      <li><a href="#">Jade</a></li>
+      <li><a href="#">Painting&Prints</a></li>
+      <li><a href="#">Miscellaneous</a></li>      
+    </ul>
+  </nav>
+
+  <!--  -->
+  <article  class="grid-container">
+
+  <figure class="grid-item">
+  <img src="photos\Ceramicsr\vase-1.jpg" alt="Trulli">
+  <figcaption>Elastic Office Lift Computer Chair Cover Modern Anti-dirty Boss Rotating Chair</figcaption>  
+  <figcaption class="price">$000 </figcaption>
+  </figure>
+
+  <figure class="grid-item">
+  <img src="photos\Ceramicsr\vase-bb-1.jpg" alt="Trulli">
+  <figcaption>2/4/6PCS Fabric Chair Cover for Dining Room Chairs Covers High Back Living Room</figcaption>    
+  <figcaption class="price">$000 </figcaption>
+  </figure>
+
+  <figure class="grid-item">
+  <img src="photos\Ceramicsr\box-1.jpg"" alt="Trulli">
+  <figcaption>A Yellow Ground Chinese Enamel Figure Box, Qing Dynasty.</figcaption>    
+  <figcaption class="price">$150</figcaption>
+  </figure> 
+
+  <figure class="grid-item">
+  <img src="photos\Ceramicsr\2roosters-1.jpeg" alt="Trulli">
+  <figcaption>Pair of Chinese Turquoise Glazed Figure Roosters. 19th century.</figcaption>    
+  <figcaption class="price">$595</figcaption>
+  </figure>
+
+  <figure class="grid-item">
+  <img src="photos\Ceramicsr\jar-1.jpg" alt="Trulli">
+  <figcaption>A Chinese Famille Rose Peach and Bat Porcelain Jar, Republic Period.</figcaption>  
+  <figcaption class="price">$350</figcaption>
+  </figure>  
+
+  <figure class="grid-item">
+  <img src="photos\Ceramicsr\bowl-1.jpg" alt="Trulli">
+  <figcaption>A Fine Chinese Famille Rose Rooster Porcelain Bowl, 19th Century.</figcaption>  
+  <figcaption class="price">$375</figcaption>
+  </figure>  
+
+  <figure class="grid-item">
+  <img src="photos\Ceramicsr\2cup-1.jpg" alt="Trulli">
+  <figcaption>Pair of Chinese Famille Rose Porcelain Tea Cups, 19th Century.r</figcaption>  
+  <figcaption class="price">$350</figcaption>
+  </figure>  
+
+  <!--
+    <div class="button pre"><i class="fa fa-arrow-circle-left" style="font-size:40px"></i></div>
+    <div class="button next"><i class="fa fa-arrow-circle-right" style="font-size:40px"></i></div>
+  -->
+
+  </article>
+</section>
+
+<hr class="sepaline">
+
+<!-- footer -->
+<footer>
+
+<div class="des">
+Welcome to the Asian Art and Antiques online store in San Francisco. We specialize in offering exquisite Chinese antiques and decorative Asian art, each possessing a unique charm acquired over extended periods of collection. Our owner initiated this captivating Asian Art and antique collection in 2009, acquiring items from various sources within the United States, including antique shows, auction houses, and art galleries. Enjoy your exploration of our store, and feel free to reach out via email at asianarthall@gmail.com for any inquiries or if you find something you'd like to purchase.
+</div>
+
+<div class="mis">
+
+<div class="email">
+  <a href="mailto:asianarthall@gmail.com">Send me email <i class="fa-regular fa-envelope"></i></a>
+</div>
+
+<div class="paym">
+  <a><i class="fa-brands fa-cc-visa"></i></a>
+  <a><i class="fa-brands fa-cc-mastercard"></i></a>
+  <a><i class="fa-brands fa-cc-discover"></i></a>
+  <a><i class="fa-brands fa-cc-amex"></i></a>
+  <a><i class="fa-brands fa-paypal"></i></a>、
+</div>
+</div>
+</footer>
+
+<!-- for double circles cursor -->
+<div class="cursor"></div>
+<div class="cursor2"></div>
+
+<script>
+
+var Cursor = document.querySelector('.cursor');
+var Cursorinner = document.querySelector('.cursor2');
+var A = document.querySelectorAll('A');
+
+document.addEventListener('mousemove', function(E){
+  var X = E.clientX;
+  var Y = E.clientY;
+  Cursor.style.transform = `translate3d(calc(${E.clientX}Px - 50%), calc(${E.clientY}Px - 50%), 0)`
+});
+
+document.addEventListener('mousemove', function(E){
+  var X = E.clientX;
+  var Y = E.clientY;
+  Cursorinner.style.left = X + 'Px';
+  Cursorinner.style.top = Y + 'Px';
+});
+
+document.addEventListener('mousedown', function(){
+  Cursor.classList.add('Click');
+  Cursorinner.classList.add('cursorinnerhover')
+});
+
+document.addEventListener('mouseup', function(){
+  Cursor.classList.remove('Click')
+  Cursorinner.classList.remove('cursorinnerhover')
+});
+
+A.forEach(item => {
+  item.addEventListener('mouseover', () => {
+  Cursor.classList.add('hover');
+});
+
+item.addEventListener('mouseleave', () => {
+  Cursor.classList.remove('hover');
+});
+})
+
+</script>
+
+</body>
+</html>
